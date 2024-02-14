@@ -2,8 +2,8 @@
 export function Task({ text }) {
 
   return (
-    <div>
-      <p>Task: {text}</p>
+    <div className="">
+      <p>{text}</p>
     </div>
   );
 }
