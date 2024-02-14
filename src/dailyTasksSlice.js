@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  tasks: ["meditate", "hck", "dinner"],
+  tasks: JSON.parse(localStorage.getItem('tasks_007')) || ["meditate", "hck", "dinner"],
 };
 
 const dailyTaskSlice = createSlice({
@@ -10,10 +10,12 @@ const dailyTaskSlice = createSlice({
   reducers: {
     addTask(state, action) {
       state.tasks = [...state.tasks, action.payload]
+      localStorage.setItem('tasks_007', JSON.stringify(state.tasks));
     },
     closeTask(state, action) {
       const newDailyTasks = state.tasks.filter(item => item!==action.payload);
       state.tasks = newDailyTasks
+      localStorage.setItem('tasks_007', JSON.stringify(state.tasks));
     }
   }
 });
