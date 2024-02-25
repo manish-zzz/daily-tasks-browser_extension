@@ -16,7 +16,7 @@ function App() {
       <ul>
         {
           tasks.map((task, index) => {
-            return <li key={index} className="flex justify-center items-center w-fit gap-20 my-7 p-3 bg-blue-50 rounded">
+            return <li key={index} className="flex justify-center items-center w-fit gap-20 my-7 p-3 bg-blue-100 rounded">
               <Task text={task} />
               <input className="p-2 px-3 bg-amber-100 rounded-full cursor-pointer" type="button" value="X" 
                 onClick={() => dispatch(closeTask(task))} />
